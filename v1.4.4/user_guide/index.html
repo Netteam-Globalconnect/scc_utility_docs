@@ -1,0 +1,1249 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../getting_started/">
+      
+      
+        <link rel="next" href="../guides/usage/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>SCC Utility CLI User Guide - SCC Utility</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#scc-utility-cli-user-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SCC Utility" class="md-header__button md-logo" aria-label="SCC Utility" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SCC Utility
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SCC Utility CLI User Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Netteam-Globalconnect/scc_utility" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SCC Utility" class="md-nav__button md-logo" aria-label="SCC Utility" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SCC Utility
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Netteam-Globalconnect/scc_utility" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SCC Utility CLI User Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Command-line interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Services
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Services
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/services/cdfmc_api_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cdfmc Api Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/services/cli_api_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cli Api Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/services/device_upgrade_api_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Device Upgrade Api Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/services/inventory_api_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inventory Api Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/services/msp_api_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Msp Api Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/services/scc_credentials_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scc Credentials Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/services/ssh_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ssh Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/services/token_validation_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Token Validation Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/services/transaction_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transaction Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-and-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication and Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#msp-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      MSP Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MSP Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#msp-management_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      MSP Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command Reference
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      deploy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-bulk" class="md-nav__link">
+    <span class="md-ellipsis">
+      deploy-bulk
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      list-versions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      upgrade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-bulk" class="md-nav__link">
+    <span class="md-ellipsis">
+      upgrade-bulk
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      monitor-upgrade
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="scc-utility-cli-user-guide">SCC Utility CLI User Guide<a class="headerlink" href="#scc-utility-cli-user-guide" title="Permanent link">&para;</a></h1>
+<p>This guide provides an in-depth overview of the <strong>scc_utility</strong> command-line interface (CLI), which automates common Security Cloud Control (SCC) tasks such as deploying and upgrading Firepower Threat Defense (FTD) devices, and monitoring upgrade transactions.</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#overview">Overview</a>  </li>
+<li><a href="#prerequisites">Prerequisites</a>  </li>
+<li><a href="#installation">Installation</a>  </li>
+<li><a href="#authentication-and-configuration">Authentication and Configuration</a>  </li>
+<li><a href="#global-options">Global Options</a>  </li>
+<li><a href="#command-reference">Command Reference</a>  </li>
+<li><a href="#deploy">deploy</a>  </li>
+<li><a href="#deploy-bulk">deploy-bulk</a>  </li>
+<li><a href="#list-versions">list-versions</a>  </li>
+<li><a href="#upgrade">upgrade</a>  </li>
+<li><a href="#upgrade-bulk">upgrade-bulk</a>  </li>
+<li><a href="#monitor-upgrade">monitor-upgrade</a>  </li>
+<li><a href="#interactive-mode">Interactive Mode</a>  </li>
+<li><a href="#examples">Examples</a>  </li>
+<li><a href="#troubleshooting">Troubleshooting</a>  </li>
+<li><a href="#best-practices">Best Practices</a></li>
+</ol>
+<hr />
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The <strong>scc_utility</strong> CLI simplifies and centralizes operations against the Security Cloud Control (SCC) APIs:</p>
+<ul>
+<li><strong>Deploy</strong> pending configuration changes to one or more FTD devices  </li>
+<li><strong>List</strong> available and compatible firmware versions  </li>
+<li><strong>Upgrade</strong> FTDs individually or in bulk  </li>
+<li><strong>Monitor</strong> upgrade transactions in real time  </li>
+</ul>
+<p>All commands share a common entry point (<code>app.py</code>), invoking subcommands for each operation.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Windows OS</strong> (Windows 10 or later)  </li>
+<li>Access to the Netteam-Globalconnect GitHub organization (invite required)  </li>
+<li>Valid SCC <strong>API token</strong> with permissions to query inventory and perform deployments/upgrades  </li>
+</ul>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Download</strong> the latest MSI installer from the SCC Utility GitHub Releases page (requires a GitHub account and membership invitation):<br />
+   https://github.com/Netteam-Globalconnect/scc_utility/releases/latest  </li>
+<li><strong>Run</strong> the downloaded <code>.msi</code> file and follow the on-screen prompts to install the application.  </li>
+<li>After installation, the <code>scc_utility</code> CLI tool will be available in your Start menu or via the command prompt.</li>
+</ol>
+<h2 id="authentication-and-configuration">Authentication and Configuration<a class="headerlink" href="#authentication-and-configuration" title="Permanent link">&para;</a></h2>
+<h2 id="msp-management">MSP Management<a class="headerlink" href="#msp-management" title="Permanent link">&para;</a></h2>
+<p>For MSP (Managed Service Provider) users, the CLI offers dedicated tenant management workflows:</p>
+<ol>
+<li><strong>Tenant Selection</strong>: On startup, if your API token belongs to an MSP account, you’ll be prompted to select one of your managed tenants from the MSP portal.</li>
+<li><strong>API-Only User Provisioning</strong>: The CLI ensures an API-only user exists in the selected tenant and, if not, provisions one automatically.</li>
+<li><strong>Tenant-Scoped Token Generation</strong>: A fresh, tenant-scoped API token is generated for that API-only user and used for all subsequent operations.</li>
+<li><strong>Seamless Context</strong>: After selection, all commands (<code>deploy</code>, <code>upgrade</code>, etc.) run in the context of the chosen managed tenant.</li>
+</ol>
+<p>If no managed tenants are found, the CLI falls back to using your original API token and operates at the root level.</p>
+<p>Before executing any commands, you must supply your SCC API credentials. You can provide them via:</p>
+<ul>
+<li><strong>Command-line options</strong> (<code>--region</code>, <code>--api-token</code>)  </li>
+<li><strong>Interactive prompt</strong> (you’ll be prompted if neither option is set)</li>
+</ul>
+<p>Credentials are managed by the <code>SccCredentialsService</code>, which caches or prompts to ensure secure handling.</p>
+<h3 id="msp-management_1">MSP Management<a class="headerlink" href="#msp-management_1" title="Permanent link">&para;</a></h3>
+<p>For MSP (Managed Service Provider) users, the CLI offers dedicated tenant management workflows:</p>
+<ol>
+<li><strong>Tenant Selection</strong>: On startup, if your API token belongs to an MSP account, you’ll be prompted to select one of your managed tenants from the MSP portal.</li>
+<li><strong>API-Only User Provisioning</strong>: The CLI ensures an API-only user exists in the selected tenant and, if not, provisions one automatically.</li>
+<li><strong>Tenant-Scoped Token Generation</strong>: A fresh, tenant-scoped API token is generated for that API-only user and used for all subsequent operations.</li>
+<li><strong>Seamless Context</strong>: After selection, all commands (<code>deploy</code>, <code>upgrade</code>, etc.) run in the context of the chosen managed tenant.</li>
+</ol>
+<p>If no managed tenants are found, the CLI falls back to using your original API token and operates at the root level.</p>
+<h2 id="global-options">Global Options<a class="headerlink" href="#global-options" title="Permanent link">&para;</a></h2>
+<p>All subcommands inherit these global options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--region</code></td>
+<td>SCC region identifier</td>
+<td>No*</td>
+<td><code>eu</code></td>
+</tr>
+<tr>
+<td><code>--api-token</code></td>
+<td>SCC API access token (string)</td>
+<td>No*</td>
+<td><code>ABCDEF12345</code></td>
+</tr>
+</tbody>
+</table>
+<p><small>*If omitted, you will be prompted at runtime or credentials loaded from cache.</small></p>
+<h2 id="command-reference">Command Reference<a class="headerlink" href="#command-reference" title="Permanent link">&para;</a></h2>
+<p>Below is a detailed breakdown of each available subcommand.</p>
+<hr />
+<h3 id="deploy"><code>deploy</code><a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h3>
+<p><strong>Syntax:</strong>
+<div class="highlight"><pre><span></span><code>scc_utility<span class="w"> </span>deploy<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div></p>
+<p><strong>Description:</strong><br />
+Deploys any pending configuration changes to a single FTD device.</p>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--ftd-uid</code></td>
+<td>UID of the target FTD</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>--ftd-name</code></td>
+<td>Name filter for selecting the FTD (prefix match)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Behavior:</strong><br />
+1. If <code>--ftd-name</code> is provided and matches exactly one device, its UID is used.<br />
+2. If multiple devices match or neither <code>--ftd-uid</code> nor <code>--ftd-name</code> given, an interactive selector appears.<br />
+3. Deploys with default notes: <code>"Deployment via CLI"</code>.<br />
+4. Prints a success message on completion.</p>
+<p><strong>Exit Code:</strong><br />
+- <code>0</code> on success<br />
+- Non-zero on failure</p>
+<hr />
+<h3 id="deploy-bulk"><code>deploy-bulk</code><a class="headerlink" href="#deploy-bulk" title="Permanent link">&para;</a></h3>
+<p><strong>Syntax:</strong>
+<div class="highlight"><pre><span></span><code>scc_utility<span class="w"> </span>deploy-bulk<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div></p>
+<p><strong>Description:</strong><br />
+Deploys pending changes to multiple FTD devices in bulk.</p>
+<p><strong>Options:</strong><br />
+- <em>(None)</em> – all selection is interactive</p>
+<p><strong>Behavior:</strong><br />
+1. Prompts to multi-select up to all online FTDs.<br />
+2. Deploys each device with a 1-second delay between calls.<br />
+3. Uses notes: <code>"Bulk deploy from CLI"</code>.</p>
+<hr />
+<h3 id="list-versions"><code>list-versions</code><a class="headerlink" href="#list-versions" title="Permanent link">&para;</a></h3>
+<p><strong>Syntax:</strong>
+<div class="highlight"><pre><span></span><code>scc_utility<span class="w"> </span>list-versions<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div></p>
+<p><strong>Description:</strong><br />
+Lists all firmware versions compatible with a given FTD.</p>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--ftd-uid</code></td>
+<td>UID of the FTD</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>--ftd-name</code></td>
+<td>Name of the FTD (exact match)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Behavior:</strong><br />
+1. Resolves FTD via name or UID, or interactive selector if unspecified.<br />
+2. Fetches compatible versions via the <code>DeviceUpgradeApiService</code>.<br />
+3. Displays a table of versions, marking suggested versions with <code>*</code>.</p>
+<hr />
+<h3 id="upgrade"><code>upgrade</code><a class="headerlink" href="#upgrade" title="Permanent link">&para;</a></h3>
+<p><strong>Syntax:</strong>
+<div class="highlight"><pre><span></span><code>scc_utility<span class="w"> </span>upgrade<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div></p>
+<p><strong>Description:</strong><br />
+Upgrades the firmware on a single FTD to a specified or selected version.</p>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--ftd-uid</code></td>
+<td>UID of the target FTD</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>--ftd-name</code></td>
+<td>Name filter for selecting the FTD</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>--upgrade-package-uid</code></td>
+<td>UID of the upgrade package (firmware image)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Behavior:</strong><br />
+1. Resolves target FTD via name or UID; interactive if ambiguous.<br />
+2. If no upgrade package provided, prompts to select from compatible versions (suggested marked <code>*</code>).<br />
+3. Optionally deploys pending changes first (confirmation prompt).<br />
+4. Prompts for final confirmation before starting upgrade.<br />
+5. Executes the upgrade and prints status.</p>
+<p><strong>Interactive Prompts:</strong><br />
+- Select firmware version<br />
+- Confirm pre-upgrade deploy<br />
+- Confirm upgrade</p>
+<hr />
+<h3 id="upgrade-bulk"><code>upgrade-bulk</code><a class="headerlink" href="#upgrade-bulk" title="Permanent link">&para;</a></h3>
+<p><strong>Syntax:</strong>
+<div class="highlight"><pre><span></span><code>scc_utility<span class="w"> </span>upgrade-bulk<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div></p>
+<p><strong>Description:</strong><br />
+Upgrades multiple FTD devices in bulk.</p>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--upgrade-package-uid</code></td>
+<td>UID of the firmware package to apply</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Behavior:</strong><br />
+1. If no package UID provided, interactive version selection.<br />
+2. Prompts to multi-select up to 10 online FTDs.<br />
+3. Upgrades all selected devices in parallel.</p>
+<hr />
+<h3 id="monitor-upgrade"><code>monitor-upgrade</code><a class="headerlink" href="#monitor-upgrade" title="Permanent link">&para;</a></h3>
+<p><strong>Syntax:</strong>
+<div class="highlight"><pre><span></span><code>scc_utility<span class="w"> </span>monitor-upgrade<span class="w"> </span>--transaction-id<span class="w"> </span>&lt;ID&gt;
+</code></pre></div></p>
+<p><strong>Description:</strong><br />
+Continuously polls and displays the status of a bulk upgrade transaction.</p>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--transaction-id</code></td>
+<td>ID of the transaction to monitor</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Behavior:</strong><br />
+1. Polls every 10 seconds by default.<br />
+2. Renders a live-updating table of device states until completion.</p>
+<hr />
+<h2 id="interactive-mode">Interactive Mode<a class="headerlink" href="#interactive-mode" title="Permanent link">&para;</a></h2>
+<p>Whenever a command cannot resolve a device or firmware version from provided flags, you will enter an <strong>interactive</strong> mode powered by questionary and rich. Use arrow keys and spacebar to navigate and select items.</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<p>Deploy to a specific device by UID:
+<div class="highlight"><pre><span></span><code>scc_utility<span class="w"> </span>deploy<span class="w"> </span>--ftd-uid<span class="w"> </span>a1b2c3d4<span class="w"> </span>--region<span class="w"> </span>us-east-1<span class="w"> </span>--api-token<span class="w"> </span><span class="nv">$SCC_TOKEN</span>
+</code></pre></div></p>
+<p>Bulk upgrade with interactive version selection:
+<div class="highlight"><pre><span></span><code>scc_utility<span class="w"> </span>upgrade-bulk<span class="w"> </span>--region<span class="w"> </span>eu-west-1
+</code></pre></div></p>
+<p>Monitor an upgrade transaction:
+<div class="highlight"><pre><span></span><code>scc_utility<span class="w"> </span>monitor-upgrade<span class="w"> </span>--transaction-id<span class="w"> </span>tx-1234567890
+</code></pre></div></p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Authentication errors</strong>: Ensure your <code>--api-token</code> is valid and not expired. Re-run the command without <code>--api-token</code> to be prompted for fresh credentials.  </li>
+<li><strong>Region not supported</strong>: Verify the region code is one of the supported regions in <code>scc_utility/utils/region_mapping.py</code>.  </li>
+<li><strong>No devices found</strong>: Check that your SCC tenant has devices in an <strong>ONLINE</strong> state.  </li>
+<li><strong>Bulk operations hanging</strong>: Use <code>monitor-upgrade</code> to inspect progress or failures.</li>
+</ul>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Always run the <code>deploy</code> command before upgrading to ensure configuration consistency.  </li>
+<li>Review compatible versions with <code>list-versions</code> to confirm upgrade paths.  </li>
+<li>Use bulk commands for routine maintenance windows to minimize manual effort.  </li>
+<li>Automate monitoring by piping <code>monitor-upgrade</code> output into logs or alerting systems.</li>
+</ul>
+<hr />
+<p><em>For further assistance, consult the project repository or contact the SCC support team.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

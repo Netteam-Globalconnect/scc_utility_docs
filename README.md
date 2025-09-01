@@ -1,1 +1,0 @@
-# scc_utility_docs
